@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공강친구 | 공강을 함께 보내는 친구</title>
+<style>
+:root{--ink:#202433;--muted:#788094;--line:#e9ebf1;--bg:#fff;--soft:#f7f8fb;--blue:#4778ee;--blue-soft:#edf3ff;--pink:#e95c9b;--yellow:#fff0a8;--green:#239b74;--shadow:0 8px 28px rgba(32,36,51,.06)}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font-family:Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:14px}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #b9ccff;outline-offset:2px}.app{max-width:1240px;margin:auto;min-height:100vh;padding:0 28px 90px}.topbar{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:18px}.brand{display:flex;align-items:center;gap:11px;font-size:21px;font-weight:850;letter-spacing:-.7px;white-space:nowrap}.logo{width:38px;height:38px;border-radius:13px;background:var(--blue);color:white;display:grid;place-items:center;font-size:20px}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:500;letter-spacing:0;margin-top:3px}.top-actions{display:flex;gap:9px}.btn{border-radius:11px;padding:11px 15px;font-weight:700;transition:.15s}.btn-primary{background:var(--blue);color:white}.btn-primary:hover{background:#315fce}.btn-light{background:var(--soft);border:1px solid var(--line);color:var(--ink)}.btn-line{background:white;border:1px solid var(--line);color:var(--ink)}.btn-danger{background:#fff0f1;color:#c84355}.hero{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding:30px 0 22px}.eyebrow{font-size:11px;letter-spacing:1.2px;color:var(--blue);font-weight:800}.hero h1{font-size:28px;letter-spacing:-1.1px;margin:8px 0}.hero p{color:var(--muted);margin:0;line-height:1.6}.summary{display:flex;gap:10px}.stat{padding:12px 16px;border:1px solid var(--line);border-radius:14px;min-width:105px}.stat strong{display:block;font-size:21px;margin-bottom:3px}.stat span{font-size:11px;color:var(--muted)}.toolbar{display:flex;align-items:center;gap:10px;margin-bottom:15px}.search{flex:1;position:relative}.search input{width:100%;padding:12px 14px 12px 38px;border:1px solid var(--line);border-radius:12px;background:#fff}.search:before{content:"⌕";position:absolute;left:14px;top:8px;font-size:22px;color:var(--muted)}.sort-select{border:1px solid var(--line);border-radius:12px;padding:12px;background:white;color:var(--ink)}.layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:20px;align-items:start}.section-head{display:flex;align-items:center;justify-content:space-between;margin:5px 0 12px}.section-head h2{font-size:16px;margin:0;letter-spacing:-.3px}.section-head span{font-size:12px;color:var(--muted)}.people-list{display:grid;gap:12px}.person{border:1px solid var(--line);border-radius:17px;padding:17px;display:grid;grid-template-columns:54px minmax(0,1fr) auto;gap:14px;align-items:start;transition:.15s}.person:hover{border-color:#cbd7fb;box-shadow:var(--shadow)}.avatar{width:52px;height:52px;border-radius:17px;display:grid;place-items:center;font-weight:800;font-size:17px;flex-shrink:0}.avatar.male{background:#e8f0ff;color:#3265d3}.avatar.female{background:#ffe9f3;color:#d44888}.avatar.neutral{background:#f0edff;color:#7760c5}.person-main{min-width:0}.name-line{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.name{font-size:16px;font-weight:800}.live{font-size:10px;font-weight:800;color:#8b6500;background:var(--yellow);padding:4px 7px;border-radius:6px}.gender-dot{font-size:11px;font-weight:800}.gender-dot.male{color:var(--blue)}.gender-dot.female{color:var(--pink)}.meta{color:var(--muted);font-size:12px;margin-top:6px;line-height:1.5}.overlap{display:flex;align-items:center;gap:6px;margin-top:12px;flex-wrap:wrap}.overlap strong{font-size:13px}.time-chip{background:var(--blue-soft);color:#345fcb;padding:5px 8px;border-radius:7px;font-size:11px;font-weight:700}.subject-note{font-size:11px;color:var(--muted);margin-top:8px}.person-actions{display:flex;flex-direction:column;align-items:flex-end;gap:8px}.match-score{font-size:12px;font-weight:800;color:var(--green);white-space:nowrap}.small-btn{padding:9px 12px;border-radius:9px;background:var(--blue);color:white;font-weight:700;white-space:nowrap}.small-btn.secondary{background:white;color:var(--ink);border:1px solid var(--line)}.side-card{border:1px solid var(--line);border-radius:17px;padding:18px;margin-bottom:14px}.side-card h3{font-size:15px;margin:0 0 13px}.profile-mini{display:flex;gap:12px;align-items:center}.profile-mini .avatar{width:45px;height:45px;border-radius:14px}.profile-mini strong{display:block}.profile-mini span{display:block;color:var(--muted);font-size:12px;margin-top:4px}.side-card p{color:var(--muted);font-size:12px;line-height:1.6}.side-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:12px}.side-row:last-child{border:0}.side-row span{color:var(--muted)}.empty{padding:40px 15px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:16px;line-height:1.8}.tabs{display:none}.view{display:none}.view.active{display:block}.chat-layout{display:grid;grid-template-columns:300px minmax(0,1fr);border:1px solid var(--line);border-radius:17px;overflow:hidden;min-height:530px}.chat-sidebar{border-right:1px solid var(--line);padding:16px}.chat-sidebar h2{font-size:16px;margin:3px 0 14px}.chat-list{display:grid;gap:6px}.chat-item{width:100%;text-align:left;background:white;border-radius:12px;padding:11px;display:flex;gap:10px;align-items:center}.chat-item.active,.chat-item:hover{background:var(--soft)}.chat-item .avatar{width:42px;height:42px;border-radius:13px;font-size:14px}.chat-item-copy{min-width:0;flex:1}.chat-item-copy strong,.chat-item-copy span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.chat-item-copy span{font-size:11px;color:var(--muted);margin-top:5px}.chat-pane{display:flex;flex-direction:column;min-width:0}.chat-pane-head{padding:17px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}.chat-pane-head strong{font-size:15px}.messages{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1;min-height:320px;max-height:470px;overflow:auto;background:#fcfcfe}.msg{max-width:78%;align-self:flex-start;background:white;border:1px solid var(--line);border-radius:13px 13px 13px 4px;padding:10px 12px;line-height:1.5;overflow-wrap:anywhere}.msg.mine{align-self:flex-end;background:var(--blue);color:white;border-color:var(--blue);border-radius:13px 13px 4px 13px}.msg small{display:block;font-size:10px;opacity:.65;margin-top:4px}.chat-compose{padding:13px;display:flex;gap:8px;border-top:1px solid var(--line)}.chat-compose input{flex:1;min-width:0;border:1px solid var(--line);border-radius:11px;padding:12px}.openrooms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.room-card{border:1px solid var(--line);border-radius:16px;padding:17px}.room-card h3{font-size:15px;margin:0 0 7px}.room-card p{font-size:12px;color:var(--muted);line-height:1.6;min-height:36px}.room-meta{font-size:11px;color:var(--muted);margin:10px 0}.room-card .btn{width:100%}.room-chat{border:1px solid var(--line);border-radius:16px;margin-top:16px;overflow:hidden}.room-chat-head{padding:15px;display:flex;justify-content:space-between;border-bottom:1px solid var(--line)}.room-chat .messages{min-height:180px;max-height:300px}.modal-backdrop{position:fixed;inset:0;background:rgba(20,25,40,.36);z-index:10;display:none;align-items:center;justify-content:center;padding:16px}.modal-backdrop.open{display:flex}.modal{background:white;width:min(600px,100%);max-height:90vh;overflow:auto;border-radius:20px;padding:23px;box-shadow:0 25px 80px #17203b33}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.modal-head h2{font-size:19px;margin:0}.xbtn{background:var(--soft);border-radius:9px;padding:7px 10px;font-size:18px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:700;color:#4f5669}.field input,.field select,.field textarea{border:1px solid #dfe3ec;border-radius:10px;padding:11px 12px;min-width:0;background:white}.field textarea{min-height:75px;resize:vertical}.checkline{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}.hint{font-size:11px;color:var(--muted);line-height:1.6}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:19px}.filter-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.schedule-editor{border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:9px}.schedule-entry{display:grid;grid-template-columns:1.2fr .7fr .7fr auto;gap:7px;align-items:center}.schedule-entry input,.schedule-entry select{width:100%;padding:9px;border:1px solid var(--line);border-radius:8px;min-width:0}.schedule-entry button{background:#fff0f1;color:#c84355;border-radius:8px;padding:8px}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:#202433;color:white;padding:12px 17px;border-radius:12px;z-index:30;box-shadow:var(--shadow);display:none;max-width:calc(100vw - 30px);text-align:center}.toast.show{display:block}.muted{color:var(--muted)}.bottom-space{height:20px}.notice{background:#fff9df;color:#806516;padding:11px 13px;border-radius:11px;font-size:11px;line-height:1.6;margin-bottom:14px}
+@media(max-width:900px){.app{padding:0 18px 85px}.layout{grid-template-columns:1fr}.right-column{display:grid;grid-template-columns:1fr 1fr;gap:12px}.side-card{margin:0}.openrooms{grid-template-columns:repeat(2,minmax(0,1fr))}.summary .stat{min-width:85px;padding:10px}.chat-layout{grid-template-columns:245px minmax(0,1fr)}}
+@media(max-width:620px){.app{padding:0 13px 90px}.topbar{height:67px}.brand{font-size:18px}.brand small{font-size:10px}.logo{width:34px;height:34px}.top-actions .btn{padding:9px 10px;font-size:12px}.hero{padding:23px 0 18px;display:block}.hero h1{font-size:24px}.summary{margin-top:16px}.summary .stat{flex:1;min-width:0}.stat strong{font-size:18px}.toolbar{flex-wrap:wrap}.search{flex-basis:100%}.sort-select{flex:1}.person{padding:13px;grid-template-columns:43px minmax(0,1fr);gap:11px}.person .avatar{width:43px;height:43px;border-radius:13px;font-size:14px}.person-actions{grid-column:2;flex-direction:row;align-items:center;justify-content:space-between}.name{font-size:15px}.overlap{margin-top:9px}.right-column{grid-template-columns:1fr}.tabs{position:fixed;z-index:5;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-top:1px solid var(--line);padding:7px 10px calc(7px + env(safe-area-inset-bottom));gap:5px}.tab-btn{background:white;color:var(--muted);padding:8px 5px;border-radius:10px;font-size:11px;font-weight:700}.tab-btn.active{background:var(--blue-soft);color:var(--blue)}.chat-layout{grid-template-columns:1fr;min-height:0}.chat-sidebar{border-right:0;border-bottom:1px solid var(--line);padding:12px}.chat-sidebar h2{margin:2px 0 9px}.chat-list{display:flex;overflow-x:auto}.chat-item{min-width:180px;width:180px}.chat-pane-head{padding:13px}.messages{min-height:260px;max-height:42vh;padding:13px}.openrooms{grid-template-columns:1fr}.form-grid,.filter-row{grid-template-columns:1fr}.field.full{grid-column:auto}.schedule-entry{grid-template-columns:1fr 1fr 1fr auto}.schedule-entry input:first-child{grid-column:1/-1}.modal{padding:18px}.room-card p{min-height:0}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><div class="logo">⌁</div><div>공강친구<small>공강을 함께 보내는 친구</small></div></div>
+  <div class="top-actions"><button class="btn btn-light" id="filterBtn">☷ 필터</button><button class="btn btn-primary" id="createRoomBtn">＋ 방 만들기</button></div>
+</header>
+<section class="hero">
+  <div><div class="eyebrow">YOUR CAMPUS, YOUR PEOPLE</div><h1>공강에도, 함께라면 더 좋아요.</h1><p>나와 공강이 겹치는 친구를 찾고, 오늘의 빈 시간을 함께 채워보세요.</p></div>
+  <div class="summary"><div class="stat"><strong id="matchCount">0명</strong><span>공강 친구</span></div><div class="stat"><strong id="openNowCount">0명</strong><span>지금 공강 중</span></div></div>
+</section>
+<nav class="tabs" aria-label="주요 메뉴"><button class="tab-btn active" data-view="people">♧ 친구 찾기</button><button class="tab-btn" data-view="chats">▤ 채팅</button><button class="tab-btn" data-view="rooms">◎ 오픈채팅</button></nav>
+<main>
+<section id="peopleView" class="view active">
+  <div class="toolbar"><div class="search"><input id="searchInput" type="search" placeholder="이름, 전공, 국적으로 검색" aria-label="학생 검색"></div><select class="sort-select" id="sortSelect" aria-label="정렬 기준"><option value="overlap">공강 겹치는 순</option><option value="similarity">프로필 유사도 순</option><option value="name">이름순</option></select><button class="btn btn-line" id="profileBtn">내 프로필 / 시간표</button></div>
+  <div class="layout"><div><div class="section-head"><h2>나와 공강이 겹치는 친구</h2><span id="resultLabel">학생 목록</span></div><div class="people-list" id="peopleList"></div></div>
+  <aside class="right-column">
+    <div class="side-card"><h3>내 프로필</h3><div id="myProfileCard"></div><button class="btn btn-light" id="editProfileBtn" style="width:100%;margin-top:14px">프로필 수정하기</button></div>
+    <div class="side-card"><h3>오늘의 공강 요약</h3><div id="myGapSummary"></div><p>공강 시간은 등록한 시간표를 기준으로 계산돼요. 마지막 수업 이후 시간은 공강으로 표시하지 않아요.</p></div>
+    <div class="side-card"><h3>공강친구 이용 팁</h3><p>과목명은 숨기고 시간만 공유할 수 있어요. 실제로 만나기 전에는 개인정보를 신중하게 공유하고, 불편한 사용자는 대화를 중단하세요.</p></div>
+  </aside></div>
+</section>
+<section id="chatsView" class="view">
+  <div class="section-head"><h2>내 채팅</h2><span>최근 대화 순으로 표시돼요</span></div>
+  <div class="chat-layout"><aside class="chat-sidebar"><h2>대화 목록</h2><div id="chatList" class="chat-list"></div></aside><section id="chatPane" class="chat-pane"></section></div>
+</section>
+<section id="roomsView" class="view">
+  <div class="section-head"><h2>오픈채팅방</h2><button class="btn btn-primary" id="createRoomBtn2">＋ 방 만들기</button></div>
+  <div class="notice">오픈채팅은 이 브라우저 안에서만 작동하는 데모예요. 다른 기기의 사용자와 실시간으로 연결되지는 않습니다.</div>
+  <div id="roomList" class="openrooms"></div><div id="roomChat"></div>
+</section>
+</main>
+</div>
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal"><div class="modal-head"><h2 id="modalTitle">설정</h2><button class="xbtn" id="closeModal" aria-label="닫기">×</button></div><div id="modalContent"></div></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(() => {
+'use strict';
+const STORAGE_KEY='gonggangchingu_v1';
+const DAYS=['월','화','수','목','금'];
+const DAY_NAMES={월:'월요일',화:'화요일',수:'수요일',목:'목요일',금:'금요일'};
+const $=id=>document.getElementById(id);
+const pad=n=>String(n).padStart(2,'0');
+const timeLabel=m=>`${pad(Math.floor(m/60))}:${pad(m%60)}`;
+const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Math.random().toString(36).slice(2,10);
+const todayDay=()=>{const d=new Date().getDay();return d===0||d===6?'월':DAYS[d-1]};
+const nowMinutes=()=>{const d=new Date();return d.getHours()*60+d.getMinutes()};
+const defaultSchedule=[
+ {day:'월',name:'경영학원론',start:'09:00',end:'10:30'},
+ {day:'월',name:'마케팅',start:'13:00',end:'14:30'},
+ {day:'화',name:'회계원리',start:'10:30',end:'12:00'},
+ {day:'화',name:'통계학',start:'15:00',end:'16:30'},
+ {day:'수',name:'경영학원론',start:'09:00',end:'10:30'},
+ {day:'수',name:'마케팅',start:'13:00',end:'14:30'},
+ {day:'목',name:'회계원리',start:'10:30',end:'12:00'},
+ {day:'금',name:'조직행동론',start:'11:00',end:'12:30'}
+];
+const demoPeople=[
+ {id:'demo1',name:'김민지',age:21,gender:'여성',major:'경영학과',nationality:'대한민국',anonymous:false,hideSubjects:false,bio:'카페에서 공부하거나 점심 먹을 친구를 찾아요 ☕',schedule:[{day:'월',name:'',start:'09:00',end:'10:30'},{day:'월',name:'',start:'13:00',end:'14:30'},{day:'화',name:'',start:'10:30',end:'12:00'},{day:'화',name:'',start:'15:00',end:'16:30'},{day:'수',name:'',start:'09:00',end:'10:30'},{day:'수',name:'',start:'13:00',end:'14:30'},{day:'목',name:'',start:'10:30',end:'12:00'},{day:'금',name:'',start:'11:00',end:'12:30'}]},
+ {id:'demo2',name:'박서준',age:22,gender:'남성',major:'경영학과',nationality:'대한민국',anonymous:false,hideSubjects:true,bio:'학식 같이 먹어요!',schedule:[{day:'월',name:'',start:'09:00',end:'10:00'},{day:'월',name:'',start:'14:00',end:'15:30'},{day:'화',name:'',start:'09:00',end:'10:00'},{day:'화',name:'',start:'13:00',end:'14:30'},{day:'수',name:'',start:'09:00',end:'10:00'},{day:'수',name:'',start:'14:00',end:'15:30'},{day:'목',name:'',start:'09:00',end:'10:00'},{day:'금',name:'',start:'09:00',end:'10:00'}]},
+ {id:'demo3',name:'이서연',age:20,gender:'여성',major:'경제학과',nationality:'대한민국',anonymous:false,hideSubjects:false,bio:'도서관에서 같이 집중해요 📚',schedule:[{day:'월',name:'',start:'10:00',end:'11:00'},{day:'월',name:'',start:'13:00',end:'14:00'},{day:'화',name:'',start:'09:00',end:'10:00'},{day:'화',name:'',start:'12:00',end:'13:00'},{day:'수',name:'',start:'10:00',end:'11:00'},{day:'수',name:'',start:'13:00',end:'14:00'},{day:'목',name:'',start:'13:00',end:'14:00'},{day:'금',name:'',start:'09:00',end:'10:00'}]},
+ {id:'demo4',name:'Alex',age:23,gender:'남성',major:'컴퓨터공학과',nationality:'미국',anonymous:false,hideSubjects:true,bio:'한국어와 영어 모두 괜찮아요!',schedule:[{day:'월',name:'',start:'09:00',end:'10:00'},{day:'월',name:'',start:'13:00',end:'14:00'},{day:'화',name:'',start:'10:00',end:'11:00'},{day:'화',name:'',start:'14:00',end:'15:00'},{day:'수',name:'',start:'09:00',end:'10:00'},{day:'수',name:'',start:'13:00',end:'14:00'},{day:'목',name:'',start:'10:00',end:'11:00'},{day:'금',name:'',start:'13:00',end:'14:00'}]},
+ {id:'demo5',name:'최도윤',age:21,gender:'남성',major:'경영학과',nationality:'대한민국',anonymous:true,hideSubjects:true,bio:'운동이나 산책 좋아해요.',schedule:[{day:'월',name:'',start:'09:00',end:'10:30'},{day:'월',name:'',start:'13:30',end:'15:00'},{day:'화',name:'',start:'10:30',end:'12:00'},{day:'화',name:'',start:'15:00',end:'16:00'},{day:'수',name:'',start:'09:00',end:'10:30'},{day:'수',name:'',start:'13:30',end:'15:00'},{day:'목',name:'',start:'10:30',end:'12:00'},{day:'금',name:'',start:'11:00',end:'12:30'}]}
+];
+let state=loadState();
+let activeView='people', activeChatId=null, activeRoomId=null, filter={nationality:'',gender:'',age:'',major:''}, toastTimer;
+function loadState(){
+ try{
+  const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');
+  if(saved&&saved.me&&Array.isArray(saved.people))return {...saved,rooms:Array.isArray(saved.rooms)?saved.rooms:[],chats:Array.isArray(saved.chats)?saved.chats:[]};
+ }catch(e){}
+ return {me:{id:'me',name:'내 이름',age:21,gender:'선택 안 함',major:'경영학과',nationality:'대한민국',anonymous:false,hideSubjects:true,bio:'',schedule:defaultSchedule},people:demoPeople,chats:[],rooms:[],joinedRooms:[]};
+}
+function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch(e){notify('저장 공간이 부족해요. 일부 데이터를 정리해 주세요.');}}
+function notify(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2700);}
+function avatarClass(p){return p.gender==='남성'?'male':p.gender==='여성'?'female':'neutral'}
+function shownName(p){return p.anonymous?'익명 사용자':p.name}
+function timeToMin(t){if(!/^\d{2}:\d{2}$/.test(t||''))return NaN;const [h,m]=t.split(':').map(Number);return h<24&&m<60?h*60+m:NaN}
+function intervalsFor(p,day){return (p.schedule||[]).filter(x=>x.day===day).map(x=>({start:timeToMin(x.start),end:timeToMin(x.end)})).filter(x=>Number.isFinite(x.start)&&Number.isFinite(x.end)&&x.end>x.start).sort((a,b)=>a.start-b.start)}
+function gapsFor(p,day){
+ const classes=intervalsFor(p,day);if(!classes.length)return [];
+ const gaps=[];let end=classes[0].end;
+ for(let i=1;i<classes.length;i++){if(classes[i].start>end)gaps.push({start:end,end:classes[i].start});end=Math.max(end,classes[i].end)}
+ return gaps.filter(g=>g.end-g.start>=30);
+}
+function allGaps(p){return DAYS.flatMap(day=>gapsFor(p,day).map(g=>({...g,day})))}
+function overlapInfo(a,b){
+ let total=0,slots=[];
+ for(const day of DAYS){const ga=gapsFor(a,day),gb=gapsFor(b,day);
+  for(const x of ga)for(const y of gb){const start=Math.max(x.start,y.start),end=Math.min(x.end,y.end);if(end-start>=30){total+=end-start;slots.push({day,start,end})}}
+ }
+ return {total,slots};
+}
+function similarity(p){
+ let n=0;if(Number(p.age)===Number(state.me.age))n+=3;
+ if(p.gender&&p.gender===state.me.gender)n+=2;
+ if(p.major&&p.major===state.me.major)n+=4;
+ if(p.nationality&&p.nationality===state.me.nationality)n+=1;
+ return n;
+}
+function isFreeNow(p){
+ const d=todayDay(),now=nowMinutes();
+ const classes=intervalsFor(p,d);
+ if(!classes.length)return false;
+ const lastEnd=Math.max(...classes.map(x=>x.end));
+ if(now>=lastEnd)return false;
+ return gapsFor(p,d).some(g=>now>=g.start&&now<g.end);
+}
+function formatDuration(n){const h=Math.floor(n/60),m=n%60;return h?`${h}시간${m?` ${m}분`:''}`:`${m}분`}
+function slotLabel(s){return `${DAY_NAMES[s.day]||s.day} ${timeLabel(s.start)}~${timeLabel(s.end)}`}
+function personData(p){const ov=overlapInfo(state.me,p);return {...p,ov,sim:similarity(p),free:isFreeNow(p)}}
+function filteredPeople(){
+ const q=$('searchInput').value.trim().toLowerCase();
+ let list=state.people.filter(p=>p.id!==state.me.id).map(personData).filter(p=>{
+  if(q&&!`${shownName(p)} ${p.major} ${p.nationality}`.toLowerCase().includes(q))return false;
+  if(filter.nationality&&p.nationality!==filter.nationality)return false;
+  if(filter.gender&&p.gender!==filter.gender)return false;
+  if(filter.age){if(filter.age==='20이하'&&p.age>20)return false;if(filter.age==='21-23'&&(p.age<21||p.age>23))return false;if(filter.age==='24이상'&&p.age<24)return false;}
+  if(filter.major&&p.major!==filter.major)return false;
+  return true;
+ });
+ const sort=$('sortSelect').value;
+ list.sort((a,b)=>sort==='similarity'?b.sim-a.sim||b.ov.total-a.ov.total:sort==='name'?shownName(a).localeCompare(shownName(b),'ko'):b.ov.total-a.ov.total||b.sim-a.sim);
+ return list;
+}
+function renderPeople(){
+ const list=filteredPeople();$('matchCount').textContent=`${list.filter(p=>p.ov.total>0).length}명`;$('openNowCount').textContent=`${list.filter(p=>p.free).length}명`;$('resultLabel').textContent=`${list.length}명`;
+ $('peopleList').innerHTML=list.length?list.map(p=>{
+  const first=p.ov.slots[0],overlap=p.ov.total?`총 ${formatDuration(p.ov.total)}`:'공강 겹침 없음';
+  const slotHtml=first?`<span class="time-chip">${escapeHtml(slotLabel(first))}</span>`:'';
+  const live=p.free?'<span class="live">지금 공강 중</span>':'';
+  const gender=p.gender==='남성'?'♂':p.gender==='여성'?'♀':'';
+  return `<article class="person"><div class="avatar ${avatarClass(p)}">${escapeHtml(shownName(p).slice(0,1))}</div><div class="person-main"><div class="name-line"><span class="name">${escapeHtml(shownName(p))}</span><span class="gender-dot ${avatarClass(p)}">${gender}</span>${live}</div><div class="meta">${escapeHtml(p.age)}세 · ${escapeHtml(p.major||'전공 미입력')} · ${escapeHtml(p.nationality||'국적 미입력')}</div><div class="overlap"><strong>${overlap}</strong>${slotHtml}${p.ov.slots.length>1?`<span class="time-chip">외 ${p.ov.slots.length-1}회</span>`:''}</div><div class="subject-note">${p.hideSubjects?'과목명 비공개':escapeHtml(p.bio||'프로필 소개가 없어요.')}</div></div><div class="person-actions"><span class="match-score">유사도 ${p.sim}/10</span><button class="small-btn" data-chat="${escapeHtml(p.id)}">대화하기</button><button class="small-btn secondary" data-schedule="${escapeHtml(p.id)}">시간표 보기</button></div></article>`;
+ }).join(''):'<div class="empty">조건에 맞는 학생이 없어요.<br>필터를 바꾸거나 시간표를 등록해 보세요.</div>';
+ $('peopleList').querySelectorAll('[data-chat]').forEach(b=>b.onclick=()=>openChat(b.dataset.chat));
+ $('peopleList').querySelectorAll('[data-schedule]').forEach(b=>b.onclick=()=>showSchedule(b.dataset.schedule));
+ renderMyProfile();renderGapSummary();
+}
+function renderMyProfile(){
+ const p=state.me;
+ $('myProfileCard').innerHTML=`<div class="profile-mini"><div class="avatar ${avatarClass(p)}">${escapeHtml(p.name.slice(0,1)||'나')}</div><div><strong>${escapeHtml(p.name)} ${p.anonymous?'<span class="muted">(익명)</span>':''}</strong><span>${escapeHtml(p.age)}세 · ${escapeHtml(p.major||'전공 미입력')}</span></div></div><p>${escapeHtml(p.bio||'나를 소개하는 한마디를 작성해 보세요.')}</p><div class="side-row"><span>국적</span><b>${escapeHtml(p.nationality||'미입력')}</b></div><div class="side-row"><span>과목명 공개</span><b>${p.hideSubjects?'비공개':'공개'}</b></div>`;
+}
+function renderGapSummary(){
+ const day=todayDay(),gaps=gapsFor(state.me,day);
+ $('myGapSummary').innerHTML=`<div class="side-row"><span>기준 요일</span><b>${DAY_NAMES[day]}</b></div>`+(gaps.length?gaps.map(g=>`<div class="side-row"><span>${timeLabel(g.start)} ~ ${timeLabel(g.end)}</span><b>${formatDuration(g.end-g.start)}</b></div>`).join(''):'<p>오늘 등록된 공강이 없거나 수업 시간이 부족해요. 시간표를 확인해 주세요.</p>');
+}
+function switchView(view){
+ activeView=view;document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));$(view+'View').classList.add('active');
+ document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
+ if(view==='chats')renderChats();if(view==='rooms')renderRooms();
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.tab-btn').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.view)));
+$('searchInput').addEventListener('input',renderPeople);$('sortSelect').addEventListener('change',renderPeople);
+function openModal(title,html,onSave){
+ $('modalTitle').textContent=title;$('modalContent').innerHTML=html;$('modalBackdrop').classList.add('open');
+ const form=$('modalContent').querySelector('form');if(form)form.onsubmit=e=>{e.preventDefault();onSave(new FormData(form),form)};
+}
+function closeModal(){$('modalBackdrop').classList.remove('open')}
+$('closeModal').onclick=closeModal;$('modalBackdrop').addEventListener('click',e=>{if(e.target===$('modalBackdrop'))closeModal()});
+function scheduleHtml(schedule){
+ const rows=(schedule||[]).map((s,i)=>scheduleRow(s,i)).join('');
+ return `<div id="scheduleEditor" class="schedule-editor">${rows}</div><button type="button" class="btn btn-light" id="addScheduleRow" style="width:100%;margin-top:9px">＋ 수업 추가</button><div class="hint">각 수업의 요일, 시작·종료 시간을 입력하세요. 같은 요일의 수업 시간이 겹치면 저장할 수 없어요. 마지막 수업 이후 시간은 공강으로 계산하지 않습니다.</div>`;
+}
+function scheduleRow(s={},i=0){
+ return `<div class="schedule-entry"><select name="day" aria-label="요일">${DAYS.map(d=>`<option ${s.day===d?'selected':''} value="${d}">${d}요일</option>`).join('')}</select><input name="start" type="time" required value="${escapeHtml(s.start||'09:00')}" aria-label="시작 시간"><input name="end" type="time" required value="${escapeHtml(s.end||'10:30')}" aria-label="종료 시간"><button type="button" class="remove-row" aria-label="수업 삭제">×</button><input name="subject" type="text" placeholder="과목명(선택)" value="${escapeHtml(s.name||'')}" style="grid-column:1/-2"></div>`;
+}
+function attachScheduleEditor(){
+ $('addScheduleRow').onclick=()=>{$('scheduleEditor').insertAdjacentHTML('beforeend',scheduleRow({day:'월',start:'09:00',end:'10:30'}));attachRemoveButtons()};
+ attachRemoveButtons();
+}
+function attachRemoveButtons(){document.querySelectorAll('.remove-row').forEach(b=>b.onclick=()=>{const rows=$('scheduleEditor').querySelectorAll('.schedule-entry');if(rows.length<=1){notify('수업은 최소 1개 남겨 주세요.');return}b.closest('.schedule-entry').remove()})}
+function readSchedule(form){
+ const entries=[...form.querySelectorAll('.schedule-entry')].map(row=>({day:row.querySelector('[name=day]').value,start:row.querySelector('[name=start]').value,end:row.querySelector('[name=end]').value,name:row.querySelector('[name=subject]').value.trim()}));
+ for(const s of entries){const a=timeToMin(s.start),b=timeToMin(s.end);if(!Number.isFinite(a)||!Number.isFinite(b)||b<=a)throw Error('각 수업의 종료 시간은 시작 시간보다 늦어야 해요.');}
+ for(const day of DAYS){const arr=entries.filter(x=>x.day===day).sort((a,b)=>timeToMin(a.start)-timeToMin(b.start));for(let i=1;i<arr.length;i++)if(timeToMin(arr[i].start)<timeToMin(arr[i-1].end))throw Error(`${day}요일 수업 시간이 서로 겹쳐요. 시간을 확인해 주세요.`)}
+ return entries;
+}
+function profileForm(){
+ const p=state.me;
+ openModal('내 프로필 및 시간표',`<form><div class="form-grid">
+ <div class="field"><label>이름 또는 닉네임 *</label><input name="name" required maxlength="30" value="${escapeHtml(p.name)}" placeholder="이름 또는 닉네임"></div>
+ <div class="field"><label>나이 *</label><input name="age" type="number" min="16" max="100" required value="${escapeHtml(p.age)}"></div>
+ <div class="field"><label>성별</label><select name="gender"><option ${p.gender==='선택 안 함'?'selected':''}>선택 안 함</option><option ${p.gender==='남성'?'selected':''}>남성</option><option ${p.gender==='여성'?'selected':''}>여성</option><option ${p.gender==='기타'?'selected':''}>기타</option></select></div>
+ <div class="field"><label>전공</label><input name="major" maxlength="60" value="${escapeHtml(p.major)}" placeholder="예: 경영학과"></div>
+ <div class="field"><label>국적</label><input name="nationality" maxlength="60" value="${escapeHtml(p.nationality)}" placeholder="예: 대한민국"></div>
+ <div class="field full"><label>자기소개</label><textarea name="bio" maxlength="240" placeholder="공강 시간에 무엇을 하고 싶나요?">${escapeHtml(p.bio||'')}</textarea></div>
+ <label class="checkline"><input type="checkbox" name="anonymous" ${p.anonymous?'checked':''}> 다른 학생에게 익명으로 표시</label>
+ <label class="checkline"><input type="checkbox" name="hideSubjects" ${p.hideSubjects?'checked':''}> 시간표 과목명 숨기기</label>
+ <div class="field full"><label>시간표 등록</label>${scheduleHtml(p.schedule)}</div>
+ </div><div class="modal-actions"><button type="button" class="btn btn-line" id="cancelProfile">취소</button><button class="btn btn-primary" type="submit">저장하기</button></div></form>`,(fd,form)=>{
+  try{
+   const schedule=readSchedule(form),age=Number(fd.get('age')),name=String(fd.get('name')||'').trim();
+   if(!name)throw Error('이름 또는 닉네임을 입력해 주세요.');if(!Number.isInteger(age)||age<16||age>100)throw Error('나이는 16~100 사이의 정수로 입력해 주세요.');
+   state.me={...state.me,name,age,gender:fd.get('gender'),major:String(fd.get('major')||'').trim(),nationality:String(fd.get('nationality')||'').trim(),bio:String(fd.get('bio')||'').trim(),anonymous:fd.has('anonymous'),hideSubjects:fd.has('hideSubjects'),schedule};
+   save();closeModal();renderPeople();notify('프로필과 시간표를 저장했어요.');
+  }catch(e){notify(e.message||'입력 내용을 확인해 주세요.')}
+ });
+ attachScheduleEditor();$('cancelProfile').onclick=closeModal;
+}
+$('profileBtn').onclick=profileForm;$('editProfileBtn').onclick=profileForm;
+function showSchedule(id){
+ const p=state.people.find(x=>x.id===id);if(!p)return;
+ const content=DAYS.map(day=>{const classes=intervalsFor(p,day);return `<div class="side-row"><span>${DAY_NAMES[day]}</span><b>${classes.length?classes.map(c=>`${timeLabel(c.start)}–${timeLabel(c.end)}`).join(', '):'등록된 수업 없음'}</b></div>`}).join('');
+ openModal(`${escapeHtml(shownName(p))}님의 시간표`,`<div class="profile-mini" style="margin-bottom:15px"><div class="avatar ${avatarClass(p)}">${escapeHtml(shownName(p).slice(0,1))}</div><div><strong>${escapeHtml(shownName(p))}</strong><span>${escapeHtml(p.age)}세 · ${escapeHtml(p.major)} · ${escapeHtml(p.nationality)}</span></div></div><p class="hint">${p.hideSubjects?'과목명은 비공개이며 수업 시간만 표시돼요.':escapeHtml(p.bio||'소개가 없습니다.')}</p>${content}<div class="modal-actions"><button class="btn btn-primary" id="scheduleChat">대화하기</button></div>`,()=>{});
+ $('modalContent').querySelector('#scheduleChat').onclick=()=>{closeModal();openChat(id)};
+}
+function filterModal(){
+ const nationalities=[...new Set(state.people.map(p=>p.nationality).filter(Boolean))].sort();
+ const majors=[...new Set(state.people.map(p=>p.major).filter(Boolean))].sort();
+ openModal('학생 필터',`<form><div class="filter-row">
+ <div class="field"><label>국적</label><select name="nationality"><option value="">모든 국적</option>${nationalities.map(x=>`<option ${filter.nationality===x?'selected':''}>${escapeHtml(x)}</option>`).join('')}</select></div>
+ <div class="field"><label>성별</label><select name="gender"><option value="">모든 성별</option>${['남성','여성','기타','선택 안 함'].map(x=>`<option ${filter.gender===x?'selected':''}>${x}</option>`).join('')}</select></div>
+ <div class="field"><label>나이</label><select name="age"><option value="">모든 나이</option><option ${filter.age==='20이하'?'selected':''}>20이하</option><option ${filter.age==='21-23'?'selected':''}>21-23</option><option ${filter.age==='24이상'?'selected':''}>24이상</option></select></div>
+ <div class="field"><label>전공</label><select name="major"><option value="">모든 전공</option>${majors.map(x=>`<option ${filter.major===x?'selected':''}>${escapeHtml(x)}</option>`).join('')}</select></div>
+ </div><div class="modal-actions"><button type="button" class="btn btn-line" id="clearFilters">초기화</button><button class="btn btn-primary">적용하기</button></div></form>`,fd=>{filter={nationality:fd.get('nationality'),gender:fd.get('gender'),age:fd.get('age'),major:fd.get('major')};closeModal();renderPeople();notify('필터를 적용했어요.')});
+ $('clearFilters').onclick=()=>{filter={nationality:'',gender:'',age:'',major:''};closeModal();renderPeople();notify('필터를 초기화했어요.')};
+}
+$('filterBtn').onclick=filterModal;
+function getChat(personId){return state.chats.find(c=>c.personId===personId)}
+function openChat(personId){
+ let chat=getChat(personId);if(!chat){chat={id:uid(),personId,messages:[],updatedAt:Date.now()};state.chats.push(chat);save()}
+ activeChatId=chat.id;switchView('chats');renderChats();
+}
+function renderChats(){
+ state.chats.sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0));
+ const list=$('chatList');
+ list.innerHTML=state.chats.length?state.chats.map(c=>{const p=state.people.find(x=>x.id===c.personId)||{name:'알 수 없는 사용자',gender:'',anonymous:false};const last=c.messages[c.messages.length-1];return `<button class="chat-item ${c.id===activeChatId?'active':''}" data-id="${c.id}"><div class="avatar ${avatarClass(p)}">${escapeHtml(shownName(p).slice(0,1))}</div><div class="chat-item-copy"><strong>${escapeHtml(shownName(p))}</strong><span>${escapeHtml(last?last.text:'대화를 시작해 보세요.')}</span></div></button>`}).join(''):'<div class="empty">아직 대화가 없어요.<br>친구 찾기에서 대화를 시작해 보세요.</div>';
+ list.querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>{activeChatId=b.dataset.id;renderChats()});
+ const chat=state.chats.find(c=>c.id===activeChatId),pane=$('chatPane');
+ if(!chat){pane.innerHTML='<div class="empty" style="margin:auto">왼쪽 목록에서 대화를 선택하세요.</div>';return}
+ const p=state.people.find(x=>x.id===chat.personId)||{name:'알 수 없는 사용자',gender:''};
+ pane.innerHTML=`<div class="chat-pane-head"><div><strong>${escapeHtml(shownName(p))}</strong><div class="muted" style="font-size:11px;margin-top:4px">${escapeHtml(p.major||'')}</div></div><button class="btn btn-line" id="leaveChat">채팅방 나가기</button></div><div class="messages" id="directMessages">${chat.messages.map(m=>`<div class="msg ${m.mine?'mine':''}">${escapeHtml(m.text)}<small>${new Date(m.time).toLocaleString('ko-KR',{hour:'2-digit',minute:'2-digit'})}</small></div>`).join('')}</div><form class="chat-compose" id="messageForm"><input name="message" maxlength="500" required placeholder="메시지를 입력하세요..." aria-label="메시지 입력"><button class="btn btn-primary">전송</button></form>`;
+ const msgBox=$('directMessages');msgBox.scrollTop=msgBox.scrollHeight;
+ $('messageForm').onsubmit=e=>{e.preventDefault();const input=e.currentTarget.elements.message;const text=input.value.trim();if(!text){notify('메시지를 입력해 주세요.');return}chat.messages.push({text,mine:true,time:Date.now()});chat.updatedAt=Date.now();save();renderChats()};
+ $('leaveChat').onclick=()=>{if(confirm('이 채팅방을 목록에서 삭제할까요? 대화 기록도 이 브라우저에서 삭제됩니다.')){state.chats=state.chats.filter(c=>c.id!==chat.id);activeChatId=null;save();renderChats();notify('채팅방을 삭제했어요.')}};
+}
+function roomForm(){
+ openModal('오픈채팅방 만들기',`<form><div class="form-grid"><div class="field full"><label>방 이름 *</label><input name="name" required maxlength="50" placeholder="예: 경영학과 점심 친구"></div><div class="field"><label>카테고리</label><select name="category"><option>자유 대화</option><option>점심·카페</option><option>같이 공부</option><option>운동·산책</option><option>전공 스터디</option></select></div><div class="field"><label>최대 인원</label><select name="limit"><option value="10">10명</option><option value="20">20명</option><option value="30">30명</option><option value="50">50명</option></select></div><div class="field full"><label>방 소개</label><textarea name="desc" maxlength="180" placeholder="어떤 사람들과 무엇을 하고 싶나요?"></textarea></div></div><p class="hint">방과 메시지는 현재 브라우저에 저장됩니다. 다른 기기의 사용자에게는 표시되지 않아요.</p><div class="modal-actions"><button type="button" class="btn btn-line" id="cancelRoom">취소</button><button class="btn btn-primary">방 만들기</button></div></form>`,fd=>{
+  const name=String(fd.get('name')||'').trim();if(!name){notify('방 이름을 입력해 주세요.');return}
+  const room={id:uid(),name,category:fd.get('category'),limit:Number(fd.get('limit')),desc:String(fd.get('desc')||'').trim(),createdAt:Date.now(),members:[state.me.name],messages:[]};
+  state.rooms.unshift(room);state.joinedRooms=state.joinedRooms||[];state.joinedRooms.push(room.id);activeRoomId=room.id;save();closeModal();switchView('rooms');renderRooms();notify('오픈채팅방을 만들었어요.');
+ });
+ $('cancelRoom').onclick=closeModal;
+}
+$('createRoomBtn').onclick=roomForm;$('createRoomBtn2').onclick=roomForm;
+function renderRooms(){
+ const rooms=$('roomList');
+ rooms.innerHTML=state.rooms.length?state.rooms.map(r=>`<article class="room-card"><h3>${escapeHtml(r.name)}</h3><span class="time-chip">${escapeHtml(r.category)}</span><p>${escapeHtml(r.desc||'함께 이야기 나눌 친구를 찾아요.')}</p><div class="room-meta">참여 ${r.members.length}/${r.limit}명 · ${new Date(r.createdAt).toLocaleDateString('ko-KR')}</div><button class="btn ${r.members.includes(state.me.name)?'btn-light':'btn-primary'}" data-join="${r.id}">${r.members.includes(state.me.name)?'채팅방 열기':'참여하기'}</button></article>`).join(''):'<div class="empty" style="grid-column:1/-1">아직 오픈채팅방이 없어요.<br>오른쪽 위 ‘방 만들기’로 첫 방을 열어 보세요.</div>';
+ rooms.querySelectorAll('[data-join]').forEach(b=>b.onclick=()=>joinRoom(b.dataset.join));
+ renderRoomChat();
+}
+function joinRoom(id){
+ const r=state.rooms.find(x=>x.id===id);if(!r)return;
+ if(!r.members.includes(state.me.name)){if(r.members.length>=r.limit){notify('이 방은 정원이 가득 찼어요.');return}r.members.push(state.me.name);save();notify('오픈채팅방에 참여했어요.')}
+ activeRoomId=id;renderRooms();
+}
+function renderRoomChat(){
+ const root=$('roomChat'),r=state.rooms.find(x=>x.id===activeRoomId);
+ if(!r){root.innerHTML='';return}
+ root.innerHTML=`<div class="room-chat"><div class="room-chat-head"><div><strong>${escapeHtml(r.name)}</strong><div class="muted" style="font-size:11px;margin-top:4px">${escapeHtml(r.category)} · ${r.members.length}명 참여</div></div><button class="btn btn-line" id="closeRoomChat">닫기</button></div><div class="messages" id="roomMessages">${r.messages.map(m=>`<div class="msg ${m.mine?'mine':''}"><b style="font-size:11px">${escapeHtml(m.author)}</b><br>${escapeHtml(m.text)}<small>${new Date(m.time).toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'})}</small></div>`).join('')}</div><form class="chat-compose" id="roomMessageForm"><input name="message" maxlength="500" required placeholder="오픈채팅 메시지..." aria-label="오픈채팅 메시지"><button class="btn btn-primary">전송</button></form></div>`;
+ $('closeRoomChat').onclick=()=>{activeRoomId=null;renderRoomChat()};
+ $('roomMessageForm').onsubmit=e=>{e.preventDefault();const input=e.currentTarget.elements.message,text=input.value.trim();if(!text){notify('메시지를 입력해 주세요.');return}r.messages.push({author:state.me.anonymous?'익명':state.me.name,text,mine:true,time:Date.now()});save();renderRoomChat()};
+ const box=$('roomMessages');box.scrollTop=box.scrollHeight;
+}
+function init(){
+ renderPeople();
+ // 데모 데이터는 실제 사용자가 등록한 학생이 아닌, 기능 확인을 위한 예시입니다.
+ if(!localStorage.getItem(STORAGE_KEY))save();
+}
+init();
+})();
+</script>
+</body>
+</html>
